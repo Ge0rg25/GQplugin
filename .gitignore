@@ -113,5 +113,7 @@ buildNumber.properties
 run/
 
 depl.bat
+.depl.bat
+/depl.bat
 
 target
