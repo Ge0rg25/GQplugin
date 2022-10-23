@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-
+import g25.quni.ru.gq.Misc.MiscExample;
 
 public class EventExample implements Listener {
     public EventExample(GQ plugin){
@@ -17,5 +17,6 @@ public class EventExample implements Listener {
     public void onEvent(PlayerJoinEvent event){
         Player player = event.getPlayer();
         player.sendMessage("Приветик!");
+        MiscExample.miscMethod(player);
     }
 }
