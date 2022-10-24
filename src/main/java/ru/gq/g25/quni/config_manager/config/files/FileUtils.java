@@ -1,8 +1,8 @@
-package ru.gq.g25.quni.misc.config.files;
+package ru.gq.g25.quni.config_manager.config.files;
 
 
 import ru.gq.g25.quni.Main;
-import ru.gq.g25.quni.misc.config.Yaml;
+import ru.gq.g25.quni.config_manager.config.Yaml;
 
 
 import java.io.File;

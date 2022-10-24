@@ -5,3 +5,4 @@ commands:
   timon:
     description: "say Timon!"
   change:
+    usage: /change <new name>

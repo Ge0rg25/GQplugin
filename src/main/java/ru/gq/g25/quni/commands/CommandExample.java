@@ -4,8 +4,8 @@ import ru.gq.g25.quni.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import ru.gq.g25.quni.misc.config.Yaml;
-import ru.gq.g25.quni.misc.config.files.FileUtils;
+import ru.gq.g25.quni.config_manager.config.Yaml;
+import ru.gq.g25.quni.config_manager.config.files.FileUtils;
 
 
 public class CommandExample implements CommandExecutor {

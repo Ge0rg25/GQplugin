@@ -1,4 +1,4 @@
-package ru.gq.g25.quni.misc.config;
+package ru.gq.g25.quni.config_manager.config;
 
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;

@@ -1,13 +1,9 @@
-package ru.gq.g25.quni.misc;
+package ru.gq.g25.quni.config_manager;
 
 import ru.gq.g25.quni.Main;
-import ru.gq.g25.quni.misc.config.Yaml;
-import ru.gq.g25.quni.misc.config.enums.DirectorySource;
+import ru.gq.g25.quni.config_manager.config.Yaml;
+import ru.gq.g25.quni.config_manager.config.enums.DirectorySource;
 import lombok.Getter;
-import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.TabCompleter;
-import org.bukkit.event.Listener;
 
 
 public class RegistrationService {

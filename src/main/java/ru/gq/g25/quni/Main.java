@@ -5,8 +5,8 @@ import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 import ru.gq.g25.quni.commands.CommandExample;
 import ru.gq.g25.quni.events.EventExample;
-import ru.gq.g25.quni.misc.RegistrationService;
-import ru.gq.g25.quni.misc.config.enums.DirectorySource;
+import ru.gq.g25.quni.config_manager.RegistrationService;
+import ru.gq.g25.quni.config_manager.config.enums.DirectorySource;
 
 public final class Main extends JavaPlugin {
 

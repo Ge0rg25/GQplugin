@@ -1,4 +1,4 @@
-package ru.gq.g25.quni.misc.config.enums;
+package ru.gq.g25.quni.config_manager.config.enums;
 
 import lombok.Getter;
 
