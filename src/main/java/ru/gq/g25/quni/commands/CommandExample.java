@@ -1,23 +1,28 @@
-package g25.quni.ru.gq.Commands;
+package ru.gq.g25.quni.commands;
 
-import g25.quni.ru.gq.GQ;
+import ru.gq.g25.quni.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import g25.quni.ru.gq.Misc.MiscExample;
-import org.bukkit.entity.Player;
+import ru.gq.g25.quni.misc.config.Yaml;
+import ru.gq.g25.quni.misc.config.files.FileUtils;
+
 
 public class CommandExample implements CommandExecutor {
 
+    Main plugin;
 
-    public CommandExample(GQ plugin) {
+    public CommandExample(Main plugin) {
         plugin.getCommand("timon").setExecutor(this);
+        this.plugin = plugin;
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        sender.sendMessage("Тимон Эй!");
-        MiscExample.miscMethod((Player) sender);
+        Yaml yaml = FileUtils.getDefaultCfg("config");
+        sender.sendMessage(yaml.getString("name") + " Эй!");
         return false;
     }
+
+
 }

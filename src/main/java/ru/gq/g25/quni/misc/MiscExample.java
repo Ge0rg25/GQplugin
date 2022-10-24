@@ -1,4 +1,4 @@
-package g25.quni.ru.gq.Misc;
+package ru.gq.g25.quni.misc;
 
 import org.bukkit.entity.Player;
 

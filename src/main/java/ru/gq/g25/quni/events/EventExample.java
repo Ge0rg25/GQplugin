@@ -1,16 +1,17 @@
-package g25.quni.ru.gq.Events;
+package ru.gq.g25.quni.events;
 
-import g25.quni.ru.gq.GQ;
+import ru.gq.g25.quni.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import g25.quni.ru.gq.Misc.MiscExample;
+import ru.gq.g25.quni.misc.MiscExample;
+
 import java.util.Random;
 
 public class EventExample implements Listener {
-    public EventExample(GQ plugin){
+    public EventExample(Main plugin){
         Bukkit.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
