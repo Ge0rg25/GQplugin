@@ -7,6 +7,7 @@ public enum DirectorySource {
     MENU("menu"),
     DATA("data"),
     SPECIAL("runes"),
+    TITLES("titles"),
     NONE("");
 
     @Getter

@@ -1,6 +1,6 @@
 name: GQ
 version: '${project.version}'
-main: ru.gq.g25.quni.Main
+main: ru.gq.g25.quni.GQ
 commands:
   timon:
     description: "say Timon!"

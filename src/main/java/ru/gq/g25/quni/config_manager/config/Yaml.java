@@ -3,10 +3,11 @@ package ru.gq.g25.quni.config_manager.config;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import ru.gq.g25.quni.Main;
+import ru.gq.g25.quni.GQ;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.bukkit.configuration.file.YamlConfiguration.loadConfiguration;
@@ -27,23 +28,23 @@ public class Yaml {
     }
 
     public Yaml(String path, String name, boolean mode) {
-        if (!new File(Main.getInstance().getDataFolder() + "/" + path, name).exists()) {
-            File dir = new File(Main.getInstance().getDataFolder() + "/" + path + "/");
-            if(!dir.exists())
+        if (!new File(GQ.getInstance().getDataFolder() + "/" + path, name).exists()) {
+            File dir = new File(GQ.getInstance().getDataFolder() + "/" + path + "/");
+            if (!dir.exists())
                 dir.mkdir();
             File file = new File(dir, name);
             YamlConfiguration cfg = loadConfiguration(file);
             cfg.options().copyDefaults(mode);
-            Main.getInstance().saveResource(path + "/" + name, false);
+            GQ.getInstance().saveResource(path + "/" + name, false);
         }
     }
 
     public Yaml(String name) {
-        if (!new File(Main.getInstance().getDataFolder(), name).exists()) {
-            File file = new File(Main.getInstance().getDataFolder(), name);
+        if (!new File(GQ.getInstance().getDataFolder(), name).exists()) {
+            File file = new File(GQ.getInstance().getDataFolder(), name);
             YamlConfiguration cfg = loadConfiguration(file);
             cfg.options().copyDefaults(true);
-            Main.getInstance().saveResource(name, false);
+            GQ.getInstance().saveResource(name, false);
         }
     }
 
@@ -68,13 +69,12 @@ public class Yaml {
         }
     }
 
-    public void set(String path, Object ...value) {
-        if(value.length > 1) {
+    public void set(String path, Object... value) {
+        if (value.length > 1) {
             if (yaml.getString(path) == null) yaml.set(path, "");
             for (Object o : value)
                 getStringList(path).add(o.toString());
-        }
-        else {
+        } else {
             yaml.set(path, value[0]);
         }
         reload();
@@ -104,7 +104,7 @@ public class Yaml {
     }
 
     public String getString(String path) {
-        return yaml.getString(path);
+        return yaml.getString(path).replace("&", "§");
     }
 
     public boolean getBoolean(String path) {
@@ -126,10 +126,6 @@ public class Yaml {
         return this.getDouble(path);
     }
 
-    public String getString(String path, String def, boolean restore) {
-        if (restore) if (this.getString(path) == null) set(path, def);
-        return this.getString(path);
-    }
 
     public boolean getBoolean(String path, boolean def, boolean restore) {
         if (restore) if (this.getString(path) == null) set(path, def);
@@ -137,7 +133,7 @@ public class Yaml {
     }
 
     public boolean isExistDirectory(String directory) {
-        File path = new File(Main.getInstance().getDataFolder() + File.separator + directory);
+        File path = new File(GQ.getInstance().getDataFolder() + File.separator + directory);
         if (path.exists()) return true;
         return false;
     }
@@ -163,6 +159,11 @@ public class Yaml {
     }
 
     public List<String> getStringList(String path) {
-        return yaml.getStringList(path);
+        List<String> config_list = yaml.getStringList(path);
+        List<String> exit_list = new ArrayList<String>();
+        for (String str : config_list) {
+            exit_list.add(str.replace("&", "§"));
+        }
+        return exit_list;
     }
 }

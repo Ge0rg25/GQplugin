@@ -1,0 +1,10 @@
+onJoinMsg: ["К нам присоеденился", "На сервер залетел", "На сервер запрыгнул", "Встречайте"]
+main_text: "&aЭто сервер Тимона"
+sub_text: "&6Я суб строка"
+title_time: 70
+
+
+enable_title: true
+enable_broadcast: true
+
+

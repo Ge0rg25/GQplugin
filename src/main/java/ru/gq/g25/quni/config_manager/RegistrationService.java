@@ -1,6 +1,6 @@
 package ru.gq.g25.quni.config_manager;
 
-import ru.gq.g25.quni.Main;
+import ru.gq.g25.quni.GQ;
 import ru.gq.g25.quni.config_manager.config.Yaml;
 import ru.gq.g25.quni.config_manager.config.enums.DirectorySource;
 import lombok.Getter;
@@ -8,9 +8,9 @@ import lombok.Getter;
 
 public class RegistrationService {
 
-    @Getter private final Main plugin;
+    @Getter private final GQ plugin;
 
-    public RegistrationService(Main plugin) {
+    public RegistrationService(GQ plugin) {
         this.plugin = plugin;
     }
 
